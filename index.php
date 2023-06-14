@@ -148,7 +148,7 @@
         </div>
     </div>
     <div class="buttons">
-        <a class="button reset" href="./">Reset</a><button type="submit">Calculate</button>
+        <a class="button reset" href="./">Reset</a>
     </div>
 </form>
 
