@@ -5,7 +5,6 @@ const urlParams = new URLSearchParams(queryString);
 
 let fuelPrice = 1.60;
 let carbonTax = 0.14;
-const carbonTaxRate = carbonTax / fuelPrice;
 
 if (urlParams.get('fuel-price')) {
     fuelPrice = urlParams.get('fuel-price');
@@ -14,6 +13,8 @@ if (urlParams.get('fuel-price')) {
 if (urlParams.get('carbon-tax')) {
     carbonTax = urlParams.get('carbon-tax');
 }
+
+let carbonTaxRate = carbonTax / fuelPrice;
 
 document.getElementById('fuel-price').value = parseFloat(fuelPrice).toFixed(2);
 document.getElementById('carbon-tax').value = parseFloat(carbonTax).toFixed(2);
@@ -36,7 +37,6 @@ if (urlParams.get('distributors')) {
 
 productionCost = productionFuel * fuelPrice;
 costPerDistributor = productionCost / distributors;
-// productionCarbonTax = (productionFuel * carbonTax) / distributors;
 productionCarbonTax = costPerDistributor * carbonTaxRate;
 
 document.getElementById('production-fuel').value = productionFuel;
@@ -96,9 +96,17 @@ retailerCostCombined = retailerCost + costPerRetailer;
 costPerCustomer = retailerCostCombined / customers;
 customerCarbonTax = costPerCustomer * carbonTaxRate;
 
+console.log(customerCarbonTax);
+
 document.getElementById('retailer-fuel').value = retailerFuel;
 document.getElementById('retailer-cost').value = parseFloat(retailerCost).toFixed(2);
 document.getElementById('retailer-cost-combined').value = parseFloat(retailerCostCombined).toFixed(2);
 document.getElementById('customers').value = customers;
 document.getElementById('cost-per-customer').value = parseFloat(costPerCustomer).toFixed(2);
 document.getElementById('customer-carbon-tax').value = parseFloat(customerCarbonTax).toFixed(2);
+
+let ctCost = document.getElementById('customer-carbox-tax-amount');
+let ctPercentage = document.getElementById('customer-carbox-tax-percentage');
+
+ctCost.innerHTML += '<strong>$' + parseFloat(customerCarbonTax).toFixed(2) + '</strong>';
+ctPercentage.innerHTML += '<strong>' + parseFloat(carbonTaxRate * 100).toFixed(2) + '%</strong>';

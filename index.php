@@ -193,8 +193,9 @@ transported to retail stores, dealerships, etc.</p>
 delivery vans that add more fuel costs.</p>
 
 <p>The <strong>Total Fuel Cost Per Customer</strong> includes the carbon tax, but even without it there would still be fuel costs 
-being passed onto the customer. The carbon tax is only <span class="customer-carbox-tax-amount"></span> 
-(just <span class="customer-carbox-tax-percentage"></span> of the fuel cost).</p>
+being passed onto the customer. Based on the above calculations, the carbon tax is only 
+<span id="customer-carbox-tax-amount"></span> per customer, or just <span id="customer-carbox-tax-percentage"></span> of their 
+share of the total fuel cost.</p>
 
 <p>And keep in mind that this is the amount that a store has to make from each customer in order to pay the fuel costs of the 
     entire delivery, but stores might not try to disperse the fuel costs that way. If they might instead divide the fuel cost by 
