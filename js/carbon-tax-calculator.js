@@ -51,7 +51,6 @@ const ctPercentage = document.getElementById('customer-carbox-tax-percentage');
 
 function ctc_calc() {
     carbonTaxRate = carbonTax.value / fuelPrice.value;
-    console.log(carbonTaxRate);
 
     productionFuelCost.value = parseFloat(productionFuel.value * fuelPrice.value).toFixed(2);
     costPerDistributor.value = parseFloat(productionFuelCost.value / distributors.value).toFixed(2);
@@ -122,3 +121,37 @@ function ctc_init() {
 }
 
 ctc_init();
+
+/* Event Listeners */
+
+fuelPrice.addEventListener('change', function() {
+    ctc_calc()
+});
+
+carbonTax.addEventListener('change', function() {
+    ctc_calc()
+});
+
+productionFuel.addEventListener('change', function() {
+    ctc_calc()
+});
+
+distributors.addEventListener('change', function() {
+    ctc_calc()
+});
+
+distributionFuel.addEventListener('change', function() {
+    ctc_calc()
+});
+
+retailers.addEventListener('change', function() {
+    ctc_calc()
+});
+
+retailerFuel.addEventListener('change', function() {
+    ctc_calc()
+});
+
+customers.addEventListener('change', function() {
+    ctc_calc()
+});
