@@ -18,13 +18,13 @@
         <h2>Settings</h2>
         <div class="settings">
             <div class="field-row">
-                <label>Fuel Price</label>
+                <label>Fuel Price<br /><span class="small-text">(including carbon tax)</span></label>
                 <div class="field dollars-per-litre">
                     $<input id="fuel-price" type="number" name="fuel-price" step="0.01" value="" /> per litre
                 </div>
             </div>
             <div class="field-row">
-                <label>Carbon Tax</label>
+                <label>Carbon Tax<br /><span class="small-text">(used for calculations only)</span></label>
                 <div class="field dollars-per-litre">
                     $<input id="carbon-tax" type="number" name="carbon-tax" step="0.01" value="" /> per litre
                 </div>

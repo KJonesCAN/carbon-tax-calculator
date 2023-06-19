@@ -64,8 +64,8 @@ function ctc_calc() {
     costPerCustomer.value = parseFloat(retailerCostCombined.value / customers.value).toFixed(2);
     carbonTaxPerCustomer.value = parseFloat(costPerCustomer.value * carbonTaxRate).toFixed(2);
 
-    ctCost.innerHTML += '<strong>$' + carbonTaxPerCustomer.value + '</strong>';
-    ctPercentage.innerHTML += '<strong>' + parseFloat(carbonTaxRate * 100).toFixed(2) + '%</strong>';
+    ctCost.innerHTML = '<strong>$' + carbonTaxPerCustomer.value + '</strong>';
+    ctPercentage.innerHTML = '<strong>' + parseFloat(carbonTaxRate * 100).toFixed(2) + '%</strong>';
 }
 
 function ctc_init() {
